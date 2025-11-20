@@ -56,4 +56,27 @@ for node in knowledge_nodes:
     print("-" * 30)
 
 print(f"✅ أنشأت {len(knowledge_nodes)} عقدة معرفية!")
-print("🚀 استمر في الرحلة!")
+
+# Challenge: Add these concepts
+new_concepts = [
+    Concept("البيانات الضخمة", "مجموعات بيانات ضخمة ومعقدة", "مفهوم"),
+    Concept("الخوارزميات", "مجموعة خطوات لحل مشكلة", "مفهوم"),
+    Concept("التعلم العميق", "نوع من تعلم الآلة باستخدام شبكات عصبية", "تقنية"),
+    Concept("الشبكات العصبية", "محاكاة لعمل الدماغ البشري", "تقنية"),
+    Concept("المعالجة الطبيعية للغة", "تفاعل الحاسوب مع اللغة البشرية", "تقنية")
+]
+
+# أضف العلاقات بينها
+
+def search_concepts(concepts, keyword):
+    results = []
+    for concept in concepts:
+        if keyword in concept.name or keyword in concept.description:
+            results.append(concept)
+    return results
+
+# اختبر الوظيفة
+print("🔎 بحث عن 'بيانات':")
+search_results = search_concepts(all_concepts, "بيانات")
+for result in search_results:
+    result.display_info()
